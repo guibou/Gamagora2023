@@ -1,0 +1,3 @@
+clang++
+
+%cpp -Wall -std=c++2b
