@@ -111,6 +111,10 @@ Attention, quand vous utiliser les `mat4` dans votre shader, il faut bien compos
 
 ![Animation](animation.gif)
 
+Vous pouvez jouer sur vos compositions de matrices pour obtenir different effets. Essayez d'obtenir un modèle mental de l'ordre des transformations.
+
+![Animation](animation_centered.gif)
+
 # Avec de la perspective
 
 Faites une scène avec un plan et un cube et mettez une camera, vous pourrez utiliser les fonctions de matrice de glm comme perspective / look at.
