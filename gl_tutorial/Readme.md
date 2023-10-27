@@ -136,7 +136,7 @@ Dans votre fragment shader, la question est "quelle est la couleur de ce pixel".
 - Ajouter un `in` dans le fragment shader avec cette même position
 - Connaissant la position de la lampe et du fragment dans le même espace, vous pouvez faire un calcul de lumière:
 
-$$L_o(x, w_o) = L_lampe (w_i . n) / | p_lampe - x | ^ 2$$
+$$L_o(x, w_o) = \frac {L_{lampe} (w_i . n)} {| p_{lampe} - x} | ^ 2$$
 
 Ici, il nous manque juste la normale $n$.
 
