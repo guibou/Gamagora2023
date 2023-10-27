@@ -123,3 +123,45 @@ Dans l'animation suivante, j'ai chargé un peu plus de triangle qu'au départ (i
 
 ![Animation 2](animation2.gif)
 
+# Maillage plus sympa
+
+Utiliser une librairie pour charger des maillages, type stl, ou obj (plus sympa, avec les uv, les normales, ...). Il vous faudra peux-être regarder le rendu indexé et les buffers d'index.
+
+# Lighting
+
+Dans votre fragment shader, la question est "quelle est la couleur de ce pixel".
+
+- Ajoutez un uniform correspondant à la position de la lampe
+- Ajouter un `out` dans le vertex shader avec la position de l'objet dans l'espace de la scene
+- Ajouter un `in` dans le fragment shader avec cette même position
+- Connaissant la position de la lampe et du fragment dans le même espace, vous pouvez faire un calcul de lumière:
+
+$$L_o(x, w_o) = L_lampe (w_i . n) / | p_lampe - x | ^ 2$$
+
+Ici, il nous manque juste la normale $n$.
+
+# Lighting avec la normal
+
+- Ajouter la normal de vos triangles dans votre buffer
+- Prenez celle-ci en compte dans le vertex shader (`in` -> `out`)
+- Dans le fragment shader, utilisez la valeur interpolée.
+
+![Animation](animation_lighting.gif)
+
+# Faites un jeu
+
+Faites un jeu. Avec des assets qui ont un lighting sympa, genre:
+
+- normal map
+- diffuse / glossy component (regardez les textures et les uvst)
+- plusieurs lampes ?
+
+Pour l'instant on ne sait pas gerer les ombres / reflexions, ... Le but c'est de jouer avec tout cela.
+
+# Ombres
+
+TBD
+
+# Portal
+
+TBD
